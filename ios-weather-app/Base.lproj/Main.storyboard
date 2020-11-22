@@ -1,24 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_weather_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="iZQ-Nz-REW">
+                                <rect key="frame" x="5" y="44" width="404" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1f-vk-B4S">
+                                <rect key="frame" x="67.5" y="419" width="279" height="58.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-wA-3hq">
+                                <rect key="frame" x="163" y="355" width="88" height="58.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5ts-wA-3hq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QUR-tr-F3n"/>
+                            <constraint firstItem="K1f-vk-B4S" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qna-My-hTD"/>
+                            <constraint firstAttribute="trailing" secondItem="iZQ-Nz-REW" secondAttribute="trailing" constant="5" id="XMm-uq-S5d"/>
+                            <constraint firstItem="iZQ-Nz-REW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="cN7-wt-Obd"/>
+                            <constraint firstItem="iZQ-Nz-REW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dzV-eF-CCS"/>
+                            <constraint firstItem="K1f-vk-B4S" firstAttribute="top" secondItem="5ts-wA-3hq" secondAttribute="bottom" constant="5.5" id="eLu-1a-nN0"/>
+                            <constraint firstItem="K1f-vk-B4S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lPe-gg-XnA"/>
+                            <constraint firstItem="K1f-vk-B4S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tDt-u7-ulE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="5ts-wA-3hq" id="3qs-Aq-pwH"/>
+                        <outlet property="searchBar" destination="iZQ-Nz-REW" id="cOE-hd-gud"/>
+                        <outlet property="temperatureLabel" destination="K1f-vk-B4S" id="EEj-W0-AOr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="76.339285714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
